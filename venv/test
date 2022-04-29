@@ -1,0 +1,32 @@
+import string
+import random
+import binascii
+
+def letters(n):
+    if (n<10):
+        return str(n)
+    elif (n == 10):
+        return "A"
+    elif (n == 11):
+        return "B"
+    elif (n == 12):
+        return "C"
+    elif (n == 13):
+        return "D"
+    elif (n == 14):
+        return "E"
+    elif (n == 15):
+        return "F"
+    else:
+        return letters(n//16) + letters(n%16)
+
+def zero(n):
+    if(n>15):
+        return letters(n)
+    else:
+        return "0" + letters(n)
+
+n = 0
+while(n!=37):
+    print(zero(n))
+    n+=1
